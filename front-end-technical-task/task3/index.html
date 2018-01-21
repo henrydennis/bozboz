@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="An API based blog using VueJS">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+    </head>
+    <body>
+
+        <div class="container" id="app">
+            <h3 class="text-center">Placeholder Blog</h3>
+            <div class="row medium-8 large-7 columns" v-for="post in posts">
+                <div class="card">
+                  <div class="card-divider">
+                    <h4>{{ post.title }}</h4>
+                  </div>
+                  <div class="card-section">
+                    <p>{{ post.body }}.</p>
+                  </div>
+                </div>
+                <div class="callout">
+                    <p>Author: {{ post.userId }} Comments: {{ post.comments.length }} <a v-on:click="post.show_comments = !post.show_comments; console.log(post.show_comments);vm.$forceUpdate();">{{ !post.show_comments ? 'show' : 'hide' }}</a></p>
+                </div>
+                <table v-if="post.show_comments">
+                    <thead>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Comment</th>
+                    </thead>
+                    <tbody>
+                        <tr v-for="comment in post.comments">
+                            <td>{{ comment.name }}</td>
+                            <td>{{ comment.email }}</td>
+                            <td>{{ comment.body }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        
+        
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        
+        
+    </body>
+</html>

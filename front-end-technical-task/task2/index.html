@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Make This Responsive</title>
+
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
+
+      .wrapper {
+        width: 800px;
+        margin: 20px auto;
+      }
+
+      .listing {
+        overflow: hidden;
+        margin: 0 0 25px 0;
+      }
+
+      .story {
+        float: left;
+        width: 250px;
+        margin-right: 25px;
+        position: relative;
+        font-size: 80%;
+      }
+
+      .story img {
+        display: block;
+      }
+
+      .story__intro {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 20px;
+        color: white;
+      }
+
+      .story__intro h2 {
+        margin: 0 0 10px 0;
+      }
+
+      .story__intro p {
+        margin: 0;
+      }
+
+      .story--main {
+        position: relative;
+        margin: 0 0 25px 0;
+        width: 100%;
+      }
+      
+
+      .story--last {
+        margin-right: 0;
+      }
+
+      @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .story--main .story__intro h2 {
+          font-size: 2.5em;
+        }
+
+        h1 {
+          font-size: 3.5em;
+        }
+
+      }
+
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        
+        .h1 {
+          font-size: 2em;
+        }
+      
+        .wrapper {
+          width: 100%;
+        }
+
+        .story--main, .story--main img {
+          width: 250px;
+        }
+
+        .story__intro {
+          position: relative;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.75);
+          padding: 20px;
+          color: white;
+        }
+
+        .story {
+          margin: 0 0 10px 0;
+          width: 100%
+        }
+
+        .story img {
+          width: 100%;
+        }
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>Make This Responsive</h1>
+
+      <p>While maintaining the heirarchy of importance.</p>
+
+      <section class="listing">
+        <article class="story story--main">
+          <img src="http://placehold.it/800x389" alt="Placeholder Image" />
+
+          <div class="story__intro">
+            <h2>Most Important Story</h2>
+            <p>This article has the most visual weight.</p>
+          </div>
+        </article>
+
+        <article class="story">
+          <img src="http://placehold.it/250x350" alt="Placeholder Image" />
+          <div class="story__intro">
+            <h2>Less Important Story</h2>
+            <p>This story has less visual weight.</p>
+          </div>
+        </article>
+
+        <article class="story">
+          <img src="http://placehold.it/250x350" alt="Placeholder Image" />
+          <div class="story__intro">
+            <h2>Less Important Story</h2>
+            <p>This story has less visual weight.</p>
+          </div>
+        </article>
+
+        <article class="story story--last">
+          <img src="http://placehold.it/250x350" alt="Placeholder Image" />
+          <div class="story__intro">
+            <h2>Less Important Story</h2>
+            <p>This story has less visual weight.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+
+
+1) Split into 3 seperate pages and included the required pages for each other (Rental has Film, Customer has Rental).
+
+2) Moved properties to top of classes
+
+3) Moved getting the rental price to Rental
+
+4) Moved rental has bonus points to Rental
+

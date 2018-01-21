@@ -1,0 +1,41 @@
+.btn {
+
+    /* Clean and format text */
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: unset;
+
+
+    /* Add gradient background with fallback for older browsers */
+    background: #111111; /* Fallback for older browsers */
+    background: -moz-linear-gradient(top, #5b5b5b 6%, #474747 26%, #2c2c2c 39%, #111111 53%); /* Firefox */
+    background: -webkit-linear-gradient(top, #5b5b5b 6%,#474747 26%,#2c2c2c 39%,#111111 53%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #5b5b5b 6%,#474747 26%,#2c2c2c 39%,#111111 53%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
+    /* Give a bit more room inside the button */
+    padding: 15px 50px 15px 50px;
+
+    /* Setup the border and edge */
+    border-radius: 25px;
+    box-shadow: 0px 0px 1px 2px #111111;
+    border: 3px solid white;
+
+    /* Allow for transitions */
+    transition: all .25s;
+
+    /* Move down on page */
+    position: absolute;
+}
+
+/* Transition border color on hover */
+.btn:hover {
+    border-color: #962a2a;
+}
+
+/* Add hearts before and after text */
+.btn::before, .btn::after {
+    content: '\0020 \2665 \0020';
+    color: #962a2a;
+    font-size: 25px;
+}
